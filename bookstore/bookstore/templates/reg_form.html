@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+</head>
+<body bgcolor="Lightskyblue">
+<center><h1>REGISTRATION FORM</h1></center><br><br>
+<form action="/reg_form" method="post">
+          {% csrf_token %}
+    <label>Name :</label>
+    <input type="text" name="Name" size="20"/><br><br>
+    <label>Date of Birth :</label><input type="date" name="dob" placeholder="Enter your date of birth"><br><br>
+    <label>Age :</label><input type="number" ><br><br>
+    <label>Gender :</label><br>
+    <input type="radio" name="Male"/>Male<br>
+    <input type="radio" name="Female"/>Female<br>
+    <input type="radio" name="Other"/>Other<br><br>
+    <label>Email :</label>
+    <input type="email" id="email" name="email"/><br><br>
+    <label>Mobile Number :</label>
+<!--    <input type="text" name="country code" value="+91" size="2"/>-->
+    <input type="text" name="phone" size="10"/><br><br>
+    Address :<br>
+    <textarea cols="80" rows="4"></textarea><br><br>
+    <label>
+        Department:
+    </label>
+    <select>
+        <option value="Department">Department</option>
+        <option value="Science">Science</option>
+        <option value="Commerce">Commerce</option>
+        <option value="Humanities">Humanities</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="English">English</option>
+    </select>
+    <br><br>
+    <label>
+        Purpose:
+    </label>
+    <select>
+        <option value="Enquiry">Enquiry</option>
+        <option value="Place Order">Place Order</option>
+        <option value="Return">Return</option>
+    </select><br><br>
+    <label>
+        Materials provide:
+    </label><br>
+    <input type="checkbox" name="Checked">DebitNote
+    <input type="checkbox" name="Checked">Book
+    <input type="checkbox" name="Checked">Pen
+    <input type="checkbox" name="Checked">Exam papers
+    <br><br>
+     <input type="radio" <p> I understand that submission of false or incorrect information would invite appropriate penal actions as per rules of the institution</p >
+    <br><br>
+    <input type="submit" value="Submit">
+
+    </form>
+
+<!--    <button ondblclick="myalert()">Submit</button>-->
+<!--    <script>function alert() {alert("Order Confirmed");}</script>-->
+    {% if reg_form_successful %}
+        <p>Registration Successful!</p>
+    {% endif %}
+     <br><br>
+    <input type="button" value="Logout"/><br><br>
+    <a href="/#home">Home</a>
+
+
+
+
+</body>
+</html>
